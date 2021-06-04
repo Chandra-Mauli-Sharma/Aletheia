@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 408d45089c17049779d5cbb71d6d0730
+  - enabled: 1
+    path: Assets/Scenes/Respawn.unity
+    guid: dcca77466779244c197b0e35628e4e39
   m_configObjects: {}
