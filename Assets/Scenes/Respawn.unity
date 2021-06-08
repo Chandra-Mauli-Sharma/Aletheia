@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028346, g: 0.22571373, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: 1719283397}
   - component: {fileID: 1719283396}
   - component: {fileID: 1719283400}
+  - component: {fileID: 1719283401}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -730,6 +731,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd15d1bebeab2854ea6bae9db13d288e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1719283401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719283395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edaafcedc1ac0904bb01fb754fd0b8f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MouseLook:
+    XSensitivity: 2
+    YSensitivity: 2
+    clampVerticalRotation: 1
+    MinimumX: -90
+    MaximumX: 90
+    smooth: 0
+    smoothTime: 5
+    lockCursor: 1
 --- !u!1 &1762078205
 GameObject:
   m_ObjectHideFlags: 0
