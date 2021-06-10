@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class Trigger : MonoBehaviour
 {
+    public GameObject liftInfo; 
    void OnTriggerEnter(Collider others)
    {
-       SceneManager.LoadScene(2);
+       liftInfo.SetActive(true);
    }
 }
