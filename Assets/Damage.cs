@@ -9,6 +9,7 @@ public class Damage : MonoBehaviour
     public float health;
     public Slider slider;
     public GameObject gameObject;
+    private bool flag=false;
     void Start()
     {
         health=100.0f;
@@ -32,6 +33,10 @@ public class Damage : MonoBehaviour
         if(hit.collider.tag == "door"||hit.collider.tag == "wall")
         {
             health=health-0.50f;
+        }
+        else if(hit.collider.tag=="brick"&&flag!=true)
+        {
+            health=health-50.0f;
         }
     }
 }
