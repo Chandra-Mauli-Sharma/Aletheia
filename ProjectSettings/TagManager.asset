@@ -13,6 +13,9 @@ TagManager:
   - button f6
   - wall
   - brick
+  - building
+  - brick1
+  - dbrick
   layers:
   - Default
   - TransparentFX

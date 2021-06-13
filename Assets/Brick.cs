@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    public GameObject[] bricks;
+    private GameObject[] bricks;
     void Start()
     {
         bricks = GameObject.FindGameObjectsWithTag("brick");
