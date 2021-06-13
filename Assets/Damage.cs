@@ -34,14 +34,17 @@ public class Damage : MonoBehaviour
         {
             health=health-0.50f;
         }
-	else if(hit.collider.tag == "building")
-	{
-		health=health-0.04f;
-	}
+        else if(hit.collider.tag == "building")
+        {
+            health=health-0.04f;
+        }
         else if(hit.collider.tag=="brick" || hit.collider.tag=="brick1"&&flag!=true)
         {
-            flag=true;
-            health=health-50.0f;
+            Debug.Log(hit.collider.GetComponent<Rigidbody>().velocity.y);
+            if(hit.collider.GetComponent<Rigidbody>().velocity.y>0.0f)       
+            {
+                health=health-50.0f;
+            }
         }
     }
 }
