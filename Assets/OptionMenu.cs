@@ -8,44 +8,49 @@ using UnityEngine.UI;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
-public class OptionMenu : MonoBehaviour
-{
-
-    public GameObject option;
-    public GameObject fps;
-    public static bool state=false;
-    // Update is called once per frame
-    void Update()
+    public class OptionMenu : MonoBehaviour
     {
-        if(Input.GetKeyDown("k"))
+
+        public GameObject option;
+        public GameObject fps;
+        public static bool state=false;
+        // Update is called once per frame
+        void Update()
         {
-           if(!state)
-           {
-               Option();
-           }
-           else
-           {
-               Back();
-           }
+            if(Input.GetKeyDown("k"))
+            {
+                if(!state)
+                {
+                    Option();
+                }
+                else
+                {
+                    Back();
+                }
+            }
         }
-    
+        public void Option()
+        {
+            option.SetActive(true);
+            state=true;
+            Time.timeScale=0f;
+            fps.GetComponent<FirstPersonController>().enabled=false;
+            fps.GetComponent<CameraShake>().enabled=false;
+        }
+        public void Back()
+        {
+            option.SetActive(false);
+            state=false;
+            Time.timeScale=1f;
+            fps.GetComponent<FirstPersonController>().enabled=true;
+            fps.GetComponent<CameraShake>().enabled=true;
+        }
+
+        public void QuitGame ()
+        {
+            Debug.Log("QUIT!");
+            Application.Quit();
+        }
 
     }
-    public void Option()
-    {
-        option.SetActive(true);
-        state=true;
-        Time.timeScale=0f;
-        fps.GetComponent<FirstPersonController>().enabled=false;
-        fps.GetComponent<CameraShake>().enabled=false;
-    }
-    public void Back()
-    {
-        option.SetActive(false);
-        state=false;
-        Time.timeScale=1f;
-fps.GetComponent<FirstPersonController>().enabled=true;
-        fps.GetComponent<CameraShake>().enabled=true;
-    }
-}
 }

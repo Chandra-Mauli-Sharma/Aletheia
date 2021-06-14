@@ -38,12 +38,18 @@ public class Damage : MonoBehaviour
         {
             health=health-0.04f;
         }
-        else if(hit.collider.tag=="brick" || hit.collider.tag=="brick1"&&flag!=true)
+        else if(hit.collider.tag=="brick" || hit.collider.tag=="brick1")
         {
-            Debug.Log(hit.collider.GetComponent<Rigidbody>().velocity.y);
-            if(hit.collider.GetComponent<Rigidbody>().velocity.y>0.0f)       
+            if(hit.collider.GetComponent<Rigidbody>().velocity.y>0.0f  && (!flag))         
             {
+                Debug.Log("hi");
                 health=health-50.0f;
+                flag=true;
+            }
+            else
+            {
+                Debug.Log("hello");
+                health=health-0.0005f;                
             }
         }
     }
