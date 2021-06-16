@@ -42,14 +42,12 @@ public class Damage : MonoBehaviour
         {
             if(hit.collider.GetComponent<Rigidbody>().velocity.y>0.0f  && (!flag))         
             {
-                Debug.Log("hi");
                 health=health-50.0f;
                 flag=true;
             }
             else
             {
-                Debug.Log("hello");
-                health=health-0.0005f;                
+                health=health-0.05f;                
             }
         }
     }
