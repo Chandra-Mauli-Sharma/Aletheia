@@ -10,7 +10,7 @@ public class Damage : MonoBehaviour
     public float health;
     public Slider slider;
     private bool flag=false;
-    private string message;
+    public string message;
     public Text mtext;
     void Start()
     {
