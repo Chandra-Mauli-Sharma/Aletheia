@@ -11,6 +11,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
     public GameObject con;
     public GameObject fps;
+    [SerializeField]
     private Damage dam;
         public void  Spawn()
         {
