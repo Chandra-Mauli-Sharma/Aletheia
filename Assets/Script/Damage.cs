@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Damage : MonoBehaviour
 {
+    public GameObject gameObject;
     public float health;
     public Slider slider;
-    public GameObject gameObject;
     private bool flag=false;
+    private string message;
+    public Text mtext;
     void Start()
     {
         health=100.0f;
@@ -24,31 +26,43 @@ public class Damage : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(2);
+            gameObject.SetActive(true);
+            mtext.text=message;
+            if(Input.anyKey)
+                {
+                    SceneManager.LoadScene(2);
+                }
         }
     }
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if(hit.collider.tag == "door"||hit.collider.tag == "wall")
+        if(health>0)
         {
-            health=health-0.50f;
-        }
-        else if(hit.collider.tag == "building")
-        {
-            health=health-0.04f;
-        }
-        else if(hit.collider.tag=="brick" || hit.collider.tag=="brick1")
-        {
-            if(hit.collider.GetComponent<Rigidbody>().velocity.y>0.0f  && (!flag))         
+            if(hit.collider.tag == "door"||hit.collider.tag == "wall")
             {
-                health=health-50.0f;
-                flag=true;
+                message="Died because of hitting on wall";
+                health=health-0.50f;
             }
-            else
+            else if(hit.collider.tag == "building")
             {
-                health=health-0.05f;                
+                message="Died because of staying in building";
+                health=health-0.04f;
+            }
+            else if(hit.collider.tag=="brick" || hit.collider.tag=="brick1")
+            {
+                message="Died because of falling debris";
+                if(hit.collider.GetComponent<Rigidbody>().velocity.y>0.0f  && (!flag))         
+                {
+                    health=health-50.0f;
+                    flag=true;
+                }
+                else
+                {
+                    health=health-0.05f;                
+                }
             }
         }
     }
+    
 }

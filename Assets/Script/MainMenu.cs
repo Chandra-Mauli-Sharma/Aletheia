@@ -11,7 +11,6 @@ public class MainMenu : MonoBehaviour
     public void PlayGame ()
     {
         StartCoroutine(LoadAsynchronously ());
-
     }
     public void QuitGame ()
     {
@@ -22,8 +21,7 @@ public class MainMenu : MonoBehaviour
     {
         gameObject.SetActive(true);
         AsyncOperation operation = SceneManager.LoadSceneAsync(1);
-       
-        
+
         while(!operation.isDone)
         {
             float pro=Mathf.Clamp01(operation.progress/.9f);
@@ -35,5 +33,4 @@ public class MainMenu : MonoBehaviour
             bgm.SetActive(false);
         }
     }
-
 }
