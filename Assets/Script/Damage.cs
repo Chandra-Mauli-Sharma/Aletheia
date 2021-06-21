@@ -29,9 +29,9 @@ public class Damage : MonoBehaviour
             gameObject.SetActive(true);
             mtext.text=message;
             if(Input.anyKey)
-                {
-                    SceneManager.LoadScene(2);
-                }
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
 
@@ -47,7 +47,7 @@ public class Damage : MonoBehaviour
             else if(hit.collider.tag == "building")
             {
                 message="Died because of staying in building";
-                health=health-0.04f;
+                health=health-0.02f;
             }
             else if(hit.collider.tag=="brick" || hit.collider.tag=="brick1")
             {
