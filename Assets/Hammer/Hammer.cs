@@ -5,24 +5,16 @@ using UnityEngine;
 public class Hammer : MonoBehaviour
 {
     public GameObject gameObject;
-    private bool enableAnim;
-    // Start is called before the first frame update
-    void Start()
-    {
-        enableAnim=false;
-    }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("h"))
+        if (Input.GetMouseButtonDown(0))
         {
-            gameObject.SetActive(!(gameObject.activeSelf));
+            gameObject.transform.Rotate(0.0f,30.0f,0.0f, Space.Self);
         }
-        if (Input.GetKeyDown("j"))
+        if (Input.GetMouseButtonUp(0))
         {
-            gameObject.GetComponent<Animator>().enabled=!(enableAnim);
-            enableAnim=!enableAnim;
+            gameObject.transform.Rotate(0.0f,-30.0f,0.0f, Space.Self);
         }
     }
 }

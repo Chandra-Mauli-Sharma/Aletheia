@@ -3,16 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorAction : MonoBehaviour {
+    public GameObject hamm;
     void Update ()
     {
         RaycastHit hit;
         Renderer m_Renderer=GetComponent<Renderer>();
         Physics.Raycast(transform.position,transform.TransformDirection(Vector3.forward), out hit);
         
-        if (hit.transform.tag == "door")
+        
+        if ((hit.transform.tag == "door")||(hit.transform.tag == "dbrick"))
         {
             m_Renderer.enabled=true;
             m_Renderer.material.color=Color.green;
+        }
+        if (hit.transform.tag == "dbrick")
+        {
+            m_Renderer.enabled=true;
+            m_Renderer.material.color=Color.green;
+            hamm.SetActive(true);
         }
         else if (!(hit.transform.tag == "door"))
         {
@@ -48,11 +56,6 @@ public class DoorAction : MonoBehaviour {
             {
                 hit.transform.gameObject.GetComponent<pass_on_parent>().MyParent.GetComponent<evelator_controll>().AddTaskEve("Button floor 6");
             }
-
-
-
-        }
-
-		
+        }	
 	}
 }
