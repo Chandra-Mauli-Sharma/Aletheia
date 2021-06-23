@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LiftDeath.unity
     guid: d145137b9320850458e1091487b786a9
+  - enabled: 1
+    path: Assets/Scenes/Easy.unity
+    guid: f23140e65503fad4a82793847c139dbc
+  - enabled: 1
+    path: Assets/Scenes/Respwan2.unity
+    guid: 7e64a476de6303b44a85697bcad8d6f9
   m_configObjects: {}

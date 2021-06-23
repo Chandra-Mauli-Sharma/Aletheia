@@ -16,6 +16,7 @@ TagManager:
   - building
   - brick1
   - dbrick
+  - chair
   layers:
   - Default
   - TransparentFX
