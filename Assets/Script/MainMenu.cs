@@ -12,10 +12,30 @@ public class MainMenu : MonoBehaviour
     {
         StartCoroutine(LoadAsynchronously ());
     }
+    public void PlayGame2 ()
+    {
+        StartCoroutine(LoadAsynchronously2 ());
+    }
     public void QuitGame ()
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+    IEnumerator LoadAsynchronously2 ()
+    {
+        gameObject.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(6);
+
+        while(!operation.isDone)
+        {
+            float pro=Mathf.Clamp01(operation.progress/.9f);
+            slider.value=pro;
+            yield return null;
+        }
+        if(operation.isDone)
+        {
+            bgm.SetActive(false);
+        }
     }
     IEnumerator LoadAsynchronously ()
     {

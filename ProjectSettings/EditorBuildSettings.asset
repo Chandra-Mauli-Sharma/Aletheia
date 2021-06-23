@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Respwan2.unity
     guid: 7e64a476de6303b44a85697bcad8d6f9
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 73c32e43bb037bf4fa736abdbc6e3ace
+  - enabled: 1
+    path: Assets/Scenes/Flood.unity
+    guid: deafcdc6a7315c4428bb9e263c2cf0fa
   m_configObjects: {}
