@@ -7,6 +7,6 @@ public class FinishedLevel2 : MonoBehaviour
 {
      void OnTriggerEnter(Collider others)
    {
-       SceneManager.LoadScene(3);
+       SceneManager.LoadScene(10);
    }
 }

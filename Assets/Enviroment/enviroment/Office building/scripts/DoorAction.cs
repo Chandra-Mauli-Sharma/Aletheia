@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorAction : MonoBehaviour {
-    public GameObject hamm;
     void Update ()
     {
         RaycastHit hit;
@@ -20,7 +19,6 @@ public class DoorAction : MonoBehaviour {
         {
             m_Renderer.enabled=true;
             m_Renderer.material.color=Color.green;
-            hamm.SetActive(true);
         }
         else if (!(hit.transform.tag == "door"))
         {

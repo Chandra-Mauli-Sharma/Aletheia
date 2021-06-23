@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Flood.unity
     guid: deafcdc6a7315c4428bb9e263c2cf0fa
+  - enabled: 1
+    path: Assets/Scenes/Finished2.unity
+    guid: 010d95230a003a64ea7ff2ad491c764f
   m_configObjects: {}

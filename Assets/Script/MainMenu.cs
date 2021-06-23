@@ -16,6 +16,26 @@ public class MainMenu : MonoBehaviour
     {
         StartCoroutine(LoadAsynchronously2 ());
     }
+    public void FloodS ()
+    {
+        StartCoroutine(LoadAsynchronously3 ());
+    }
+     IEnumerator LoadAsynchronously3 ()
+    {
+        gameObject.SetActive(true);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(8);
+
+        while(!operation.isDone)
+        {
+            float pro=Mathf.Clamp01(operation.progress/.9f);
+            slider.value=pro;
+            yield return null;
+        }
+        if(operation.isDone)
+        {
+            bgm.SetActive(false);
+        }
+    }
     public void QuitGame ()
     {
         Debug.Log("QUIT!");
